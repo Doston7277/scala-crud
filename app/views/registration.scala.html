@@ -1,0 +1,34 @@
+@this(webJarsUtil: org.webjars.play.WebJarsUtil)
+@()
+@import views.html.main
+@main("Home Page", webJarsUtil) {
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/style.css")">
+    <div class="Boxreg">
+        <div class="regtext">
+            <input type="text" placeholder="Login" id="login" data-bind="value: vm.login">
+            <br>
+            <br>
+            <input type="text" placeholder="Password" id="parol" data-bind="value: vm.parol">
+            <br>
+            <br>
+            <button data-bind="click: vm.onRegistration" class="btn btn-light">Registration</button>
+        </div>
+    </div>
+    <div class="area">
+        <div class="circles">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+}

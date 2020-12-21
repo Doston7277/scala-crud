@@ -1,0 +1,42 @@
+@this(webJarsUtil: org.webjars.play.WebJarsUtil)
+@()
+@import views.html.main
+@main("Home Page", webJarsUtil) {
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 mt-5">
+                <form action="" class="text-center">
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2">Name: </label>
+                        <input class="form-control col-md-10" type="text" id="name" data-bind="value: vm.name">
+                    </div>
+                    <button data-bind="click: vm.onSubmit" class="btn btn-success">Add Name</button>
+                    <button data-bind="click: vm.getAllNames" class="btn btn-success">Get Names</button>
+                </form>
+                <form action="" class="text-center mt-5">
+                    <div class="form-group row">
+                        <label for="id" class="col-md-2">ID: </label>
+                        <input class="form-control col-md-10" type="text" id="id" data-bind="value: vm.id">
+                    </div>
+                    <button data-bind="click: vm.delete" class="btn btn-success">Delete Name</button>
+                </form>
+
+                <table class="table table-bordered table-hover mt-5" data-bind="visible: vm.getList().length > 0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: vm.getList">
+                        <tr>
+                            <td data-bind="text: $data.id"></td>
+                            <td data-bind="text: $data.name"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+}

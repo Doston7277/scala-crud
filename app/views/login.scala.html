@@ -1,0 +1,42 @@
+@this(webJarsUtil: org.webjars.play.WebJarsUtil)
+@()
+@import views.html.main
+@main("Home Page", webJarsUtil) {
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/style.css")">
+    <div class="Box">
+        <br>
+        <img src="@routes.Assets.versioned("images/information-technology-logo-png-7.png")" width="35%">
+        <br>
+        <div class="inputBox">
+            <input type="text" data-bind="value: vm.login" placeholder="UserName">
+        </div>
+        <br>
+        <div class="inputBox">
+            <input type="password" placeholder="Password">
+        </div>
+        <br>
+        <a href="@controllers.routes.HomeController.index()">
+            <button class="btn btn-light" data-bind="click: vm.loginin">Sign In</button>
+        </a>
+        <a href="@controllers.routes.HomeController.registration()" style="margin-left: 20px; color: white">
+            Registration
+        </a>
+    </div>
+    <div class="area">
+        <div class="circles">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+}
